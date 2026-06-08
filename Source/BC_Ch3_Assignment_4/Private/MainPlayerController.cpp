@@ -10,6 +10,7 @@ AMainPlayerController::AMainPlayerController()
 	  JumpAction(nullptr),
 	  LookAction(nullptr),
 	  SprintAction(nullptr)
+
 {	
 }
 
@@ -36,3 +37,4 @@ void AMainPlayerController::BeginPlay()
 	}
 	
 }
+
