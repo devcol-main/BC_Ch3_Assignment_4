@@ -17,7 +17,7 @@
 AMainCharacter::AMainCharacter()
 {
  	
-	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.bCanEverTick = false;
 	
 	
 	// (1) 스프링 암 생성
@@ -60,11 +60,11 @@ void AMainCharacter::BeginPlay()
 }
 
 // Called every frame
-void AMainCharacter::Tick(float DeltaTime)
+/*void AMainCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-}
+}*/
 
 // Called to bind functionality to input
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
