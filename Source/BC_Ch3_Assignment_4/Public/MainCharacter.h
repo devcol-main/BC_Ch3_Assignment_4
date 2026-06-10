@@ -61,22 +61,22 @@ protected:
 	// 블루프린트 접근성을 설정하지 않았더라도, 기본적으로 메타데이터가 생성됩니다.
 	
 	UFUNCTION()
-	void Move(const FInputActionValue& value);
+	void Move(const FInputActionValue& Value);
 	
 	UFUNCTION()
-	void Look(const FInputActionValue& value);
+	void Look(const FInputActionValue& Value);
 	
 	// on off 의 형태의 것들은 그냥 나눠 주는 것이 좋다
 	// 왜냐하면 이전에는 세세하게 처리하기가 상당이 까다로웠는데
 	// EnhancedInputSystem은 그것들을 매우 편하게 변경해주었기 때문에 왠만하면 나눠 주는 것이 좋다
 	UFUNCTION()
-	void StartJump(const FInputActionValue& value);
+	void StartJump(const FInputActionValue& Value);
 	UFUNCTION()
-	void StopJump(const FInputActionValue& value);
+	void StopJump(const FInputActionValue& Value);
 	
 	UFUNCTION()
-	void StartSprint(const FInputActionValue& value);
+	void StartSprint(const FInputActionValue& Value);
 	UFUNCTION()
-	void StopSprint(const FInputActionValue& value);
+	void StopSprint(const FInputActionValue& Value);
 	
 };

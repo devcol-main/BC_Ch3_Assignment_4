@@ -9,9 +9,6 @@ class UInputMappingContext;  // IMC 관련 전방 선언
 class UInputAction;// IA 관련 전방 선언
 
 
-// Enhanced Input에서 액션 값을 받을 때 사용하는 구조체
-struct FInputActionValue;
-
 UCLASS()
 class BC_CH3_ASSIGNMENT_4_API AMainPlayerController : public APlayerController
 {

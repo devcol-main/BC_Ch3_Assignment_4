@@ -140,14 +140,14 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
-void AMainCharacter::Move(const FInputActionValue& value)
+void AMainCharacter::Move(const FInputActionValue& Value)
 {
 	// 컨트롤러가 있어야 방향 계산이 가능
 	if (!Controller) return;
 
 	// Value는 Axis2D로 설정된 IA_Move의 입력값 (WASD)을 담고 있음
 	// 예) (X=1, Y=0) → 전진 / (X=-1, Y=0) → 후진 / (X=0, Y=1) → 오른쪽 / (X=0, Y=-1) → 왼쪽
-	const FVector2D MoveInput = value.Get<FVector2D>();
+	const FVector2D MoveInput = Value.Get<FVector2D>();
 
 	// IsNearlyZero
 	// 부동소수점들은 딱 0으로 안 떨어 질 수도 있기 때문에 작은 오차들은 0으로 처리 하기 위한 함수
@@ -164,10 +164,10 @@ void AMainCharacter::Move(const FInputActionValue& value)
 	}
 }
 
-void AMainCharacter::Look(const FInputActionValue& value)
+void AMainCharacter::Look(const FInputActionValue& Value)
 {
 	// 마우스의 X, Y 움직임을 2D 축으로 가져옴
-	FVector2D LookInput = value.Get<FVector2D>();
+	FVector2D LookInput = Value.Get<FVector2D>();
 
 	// X는 좌우 회전 (Yaw), Y는 상하 회전 (Pitch)
 	// 좌우 회전
@@ -179,24 +179,24 @@ void AMainCharacter::Look(const FInputActionValue& value)
 	AddControllerPitchInput(LookInput.Y);
 }
 
-void AMainCharacter::StartJump(const FInputActionValue& value)
+void AMainCharacter::StartJump(const FInputActionValue& Value)
 {
 	// Jump 함수는 Character가 기본 제공
-	if (value.Get<bool>())
+	if (Value.Get<bool>())
 	{
 		Jump();
 	}
 }
-void AMainCharacter::StopJump(const FInputActionValue& value)
+void AMainCharacter::StopJump(const FInputActionValue& Value)
 {	
 	// StopJumping 함수도 Character가 기본 제공
-	if (!value.Get<bool>())
+	if (!Value.Get<bool>())
 	{
 		StopJumping();
 	}	
 }
 
-void AMainCharacter::StartSprint(const FInputActionValue& value)
+void AMainCharacter::StartSprint(const FInputActionValue& Value)
 {
 	// Shift 키를 누른 순간 이 함수가 호출된다고 가정
 	// 스프린트 속도를 적용
@@ -209,7 +209,7 @@ void AMainCharacter::StartSprint(const FInputActionValue& value)
 	}
 
 }
-void AMainCharacter::StopSprint(const FInputActionValue& value)
+void AMainCharacter::StopSprint(const FInputActionValue& Value)
 {
 	// Shift 키를 뗀 순간 이 함수가 호출
 	// 평상시 속도로 복귀
