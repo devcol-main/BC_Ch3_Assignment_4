@@ -61,7 +61,6 @@ APawnBaseCharacter::APawnBaseCharacter()
 	LookSpeed = 100.0f;
 	
 	
-	
 	// SetActorLocation(StartLocation);
 }
 
@@ -169,6 +168,15 @@ void APawnBaseCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 				this,
 				&APawnBaseCharacter::Look
 			);
+			
+			EnhancedInputComponent->BindAction(
+				LookAction,
+				ETriggerEvent::Completed,
+				this,
+				&APawnBaseCharacter::StopLook
+			);
+			
+			
 		}
 	}	
 }
@@ -208,6 +216,11 @@ void APawnBaseCharacter::Move(const FInputActionValue& Value)
 void APawnBaseCharacter::StopMove(const FInputActionValue& Value)
 {
 	CurrentMoveInput = FVector2D::ZeroVector;
+}
+
+void APawnBaseCharacter::StopLook(const FInputActionValue& Value)
+{
+	CurrentLookInput = FVector2D::ZeroVector;
 }
 
 void APawnBaseCharacter::Look(const FInputActionValue& Value)
