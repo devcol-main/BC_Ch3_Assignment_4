@@ -81,6 +81,7 @@ public:
 	void Move(const FInputActionValue& Value);
 	void StopMove(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
+	void StopLook(const FInputActionValue& Value);
 	
 	//
 	
