@@ -109,8 +109,6 @@ void AAircraftPawnBaseCharacter::Tick(float DeltaTime)
 					TEXT("AIR"));
 		}
 		
-		
-
 		AddActorWorldOffset(FVector(0.0f, 0.0f, Gravity) * DeltaTime, true);
 		
 		if (bHasMoveInput)
@@ -126,9 +124,7 @@ void AAircraftPawnBaseCharacter::Tick(float DeltaTime)
 		}	
 	}
 	else
-	{
-		
-		
+	{	
 		
 		if (GEngine)
 		{ 
@@ -152,24 +148,8 @@ void AAircraftPawnBaseCharacter::Tick(float DeltaTime)
 			AddActorLocalOffset(LocalMoveOffset);
 		
 		}
-	}
-	
-	
-	// Move
+	}	
 
-	/*if (bHasMoveInput)
-	{
-		const FVector LocalMoveOffset =
-			FVector(CurrentMoveInput.X, CurrentMoveInput.Y, 
-				CurrentMoveInput.Z * UpMultiplier)
-			* NormalMoveSpeed
-			* DeltaTime;
-
-		AddActorLocalOffset(LocalMoveOffset);
-		
-	}	*/
-	
-	
 	// loock
 	if (bHasLookInput)
 	{
